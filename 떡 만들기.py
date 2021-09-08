@@ -14,7 +14,6 @@ start=0
 end=max(array)
 
 result = 0
-
 while(start<=end):
     total = 0
     mid = (start+end) // 2
@@ -23,11 +22,11 @@ while(start<=end):
         if x > mid: # 떡이 잘렸을때
             total += x - mid
 
-        if total < m: # 떡의 양이 모자를 때 (이진탐색에서 왼쪽 값 탐색 )
-            end = mid - 1
-        else: # 떡의 양이 충분할 때 (이진탐색에서 오른쪽 값 탐색)
-            result = mid
-            start = mid + 1
+    if total < m: # 떡의 양이 모자를 때 (이진탐색에서 왼쪽 값 탐색 )
+        end = mid - 1
+    else: # 떡의 양이 충분할 때 (이진탐색에서 오른쪽 값 탐색)
+        result = mid
+        start = mid + 1
 
 print(result)
 
